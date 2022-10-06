@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+/* reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+}
+
+/* variables */
+:root {
+    --clr-primary: hsl(158, 36%, 37%);
+    --clr-primary-dark: hsl(159, 44%, 15%);
+    --clr-bg: hsl(30, 38%, 92%);
+
+    --clr-dark-blue: hsl(212, 21%, 14%);
+    --clr-blue-gray: hsl(228, 12%, 48%);
+    --clr-white: hsl(0, 0%, 100%);
+}
+
+/* styles */
+body {
+    background-color: var(--clr-bg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    color: var(--clr-white);
+    background-color: var(--clr-primary);
+    border-radius: 0.5rem;
+
+    width: 100%;
+    border: none;
+    
+    padding: 1em;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    cursor: pointer;
+
+    transition: all 50ms ease-out;
+}
+
+button:hover,
+button:focus-visible {
+    background-color: var(--clr-primary-dark);
+}
+
+button:focus-visible {
+    outline: none;
+}
+
+button img {
+    display: inline;
+
+    vertical-align: bottom;
+}
+
+h2 {
+    font-family: "Fraunces", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+
+    max-width: 10ch;
+
+    color: var(--clr-dark-blue);
+
+    margin-block-end: 0.8em;
+}
+
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    color: var(--clr-blue-gray);
+
+    margin-block-end: 1.6em;
+}
+
+p.text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    max-width: 25ch;
+
+    color: var(--clr-blue-gray);
+
+    margin-block-end: 2em;
+}
+
+p.price {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 2rem;
+
+    color: var(--clr-primary);
+
+    display: inline-block;
+}
+
+p.old-price {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: line-through;
+
+    color: var(--clr-blue-gray);
+
+    display: inline;
+    vertical-align: super;
+    margin-inline-start: 1.5em;
+}
+
+img {
+    max-width: 100%;
+}
+
+.content {
+    position: relative;
+}
+
+.content > div {
+    margin: 2rem;
+    height: calc(100% - 4rem);
+    position: relative;
+}
+
+.preview-card {
+    display: flex;
+
+    width: 38rem;
+    height: 50%;
+
+    background-color: var(--clr-white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    position: relative;
+}
+
+.preview-card > div {
+    flex: 1 1 0;
+}
+
+@media (max-width: 40rem) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+
+    button {
+        position: relative;
+        margin-block-start: 1.5em;
+    }
+
+    .preview-card {
+        flex-direction: column;
+
+        margin: 1rem;
+    }
+
+    .content > div {
+        height: auto;
+        margin: 1.5rem;
+    }
+
+    h2, p.text {
+        max-width: none;
+    }
+}
+
+@media (min-width: 40rem) {
+    .desktop {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
+}
+
